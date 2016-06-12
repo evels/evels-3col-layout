@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import * as data from '../constants/Data'
 
 import BottomBar from '../components/BottomBar';
 
@@ -10,31 +9,12 @@ class App extends Component {
   }
 
   render() {
-    const {
-      newsSummaries
-    } = this.props;
-
     return (
-      <div className="app">
-        <BottomBar data={newsSummaries} />
+      <div className={'app'}>
+        <BottomBar data={data.NEWS_SUMMARIES} />
       </div>
     )
   };
 };
 
-App.propTypes = {
-  newsSummaries: PropTypes.array.isRequired,
-};
-
-function mapStateToProps(state) {
-  return {};
-};
-
-function mapDispatchToProps(dispatch) {
-  return {};
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default App;
