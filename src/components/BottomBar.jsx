@@ -11,12 +11,12 @@ export default class BottomBar extends Component {
     const { data } = this.props;
     const bottomBarContent = data.map((article, index) =>
       <NewsWidget
-        key={index}
-        photoUrl={article.photoUrl}
-        category={article.category}
-        title={article.title}
-        description={article.description}
-        link={article.link}
+        key={article.ArticleId}
+        photoUrl={article.ThumbnailImageId}
+        category={article.Category}
+        title={article.Title}
+        description={article.Body}
+        link={article.ArticleId}
         updated={article.updated} />);
     return (
       <div className="bottom_bar">
